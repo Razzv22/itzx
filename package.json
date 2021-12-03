@@ -1,7 +1,7 @@
 {
-  "name": "RadBotZ",
+  "name": "LtzxBOT",
   "version": "1.5.0",
-  "description": "WhatsApp Bot",
+  "description": "WhatsApp Bot ringan by nurutomo, recode by Akmalz",
   "depecrated": false,
   "main": "index.js",
   "directories": {
@@ -21,7 +21,7 @@
   ],
   "homepage": "https://github.com/Nurutomo/wabot-aq",
   "author": {
-    "name": "Nurutomo"
+    "name": "Akmalz"
   },
   "repository": {
     "type": "git",
