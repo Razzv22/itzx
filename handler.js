@@ -112,7 +112,7 @@ module.exports = {
             if (!('autolevelup' in user)) user.autolevelup = true
             if (!('lastIstigfar' in user)) user.lastIstigfar = true
         } else global.db.data.users[m.sender] = {
-            healt: 100,
+            healt: 200,
             level: 0,
             title: '',
             exp: 0,
@@ -207,7 +207,7 @@ module.exports = {
         } else global.db.data.chats[m.chat] = {
           isBanned: false,
           welcome: false,
-          detect: false,
+          detect: true,
           sWelcome: '',
           sBye: '',
           sPromote: '',
@@ -215,8 +215,8 @@ module.exports = {
           descUpdate: true,
           delete: false,
           rpg: true,
-          nsfw: false,
-          antiBadword: true,
+          nsfw: true,
+          antiBadword: false,
           antiLink: false,
           viewonce: true,
         }
@@ -235,7 +235,7 @@ module.exports = {
           if (!'nsfw' in settings) settings.nsfw = true
           if (!isNumber(settings.status)) settings.status = 0
         } else global.db.data.settings[this.user.jid] = {
-          anon: true,
+          anon: false,
           anticall: true,
           antispam: true,
           antitroli: true,
@@ -569,16 +569,17 @@ Untuk mematikan fitur ini, ketik
 global.dfail = (type, m, conn) => {
 	let name = conn.getName(m.sender)
   let msg = {
-    rowner: 'ettoo..fitur itu cuma buat owner kak',
-    owner: 'ettoo..fitur itu cuma buat owner kak',
-    mods: 'ano..hanya moderator bot yang boleh,,',
-    premium: 'ummm...kalau kamu premium baru boleh kak',
-    group: 'annoo..fitur ini cuma bisa berfungsi di grup',
-    private: 'ettooo,,fitur itu hanya boleh di chat pribadi kak',
-    admin: 'ehh,,anoo kamu member, hanya admin yg boleh memakai fitur itu',
-    botAdmin: 'etoo..jadiin aku admin dulu, baru bisa memakai fitur tersebut',
-    unreg: 'anoo..kamu belum mendaftar/ndaftar dulu yaa, caranya ketik .daftar kanao.16',
-    nsfw: 'bagaimana pun juga, tetep ga boleh hentai! baka !'
+    rowner: `❌Perintah ditolak❌\n\nSilahkan hubungi @${global.kontak[0].split`@`[0]}`,
+    owner: `❌⚠️Perintah ditolak⚠️❌\n\nSilahkan hubungi @${global.kontak[0].split`@`[0]}`,
+    mods: `❌Perintah ditolak❌\n\nSilahkan hubungi @${global.kontak[0].split`@`[0]}`,
+    premium: '❌Perintah Ini khusus pengguna _*Premium*_ !',
+    group: 'Perintah ini hanya dapat digunakan di grup!',
+    private: '❌Perintah ditolak❌\n\nGunakan Perintah ini di Chat Pribadi bot',
+    admin: 'Perintah ini hanya untuk *Admin* grup!',
+    nsfw: `Perintah ini hanya bisa diaktifkan oleh @${global.kontak[0].split`@`[0]}`,
+    botAdmin: 'Jadikan Bot sebagai admin untuk menggunakan perintah ini\n\nDenger ya dekkk!!!\nApakah orang yang tidak menjadi admin bisa menambahkan member???!!!!!',
+    unreg: `Silahkan daftar untuk menggunakan fitur ini dengan cara mengetik:\n\n*#daftar nama.umur*\n\nContoh: *#daftar nama.16*`,
+    // nsfw: 'bagaimana pun juga, tetep ga boleh hentai! baka !'
   }[type]
   if (msg) return m.reply(msg)
 }
