@@ -23,15 +23,13 @@ const defaultMenu = {
 ┃⬡ _%dateIslamic_
 ┃⬡ *Waktu* : _%time_
 ┃
-┃⬡ Chat Owner ✉️
-┃⬡ klo mw add bot ke grup ☺ !
 ┃⬡ *Uptime* : _%uptime (%muptime)_
-┃⬡ *Database* : _%rtotalreg dari %totalreg_
+┃⬡ *User terdaftar* : _%rtotalreg dari %totalreg_
 ┃⬡ *Github* : 
 ┃   github.com/akmall-236
 ┗━━━━━━⬣`.trimStart(),
   header: '┏━━〔 *%category* 〕━⬣',
-  body: '┃⬡%cmd %islimit %isPremium',
+  body: '┃⬡ %cmd %islimit %isPremium',
   footer: '┗━━⬣\n',
   after: `
 *%npmname@%version*
@@ -470,10 +468,11 @@ const more = String.fromCharCode(1)
 const readMore = more.repeat(1)
 
 function clockString(ms) {
-  let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000)
+  let d = isNaN(ms) ? '--' : Math.floor(ms / 86400000)
+  let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000) % 24
   let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
   let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
-  return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')
+  return [d, h, m, s].map(v => v.toString().padStart(2, 0)).join(':')
 }
 function ucapan() {
   const time = moment.tz('Asia/Jakarta').format('HH')
