@@ -8,7 +8,7 @@ const chats = conn.chats.all()
 const groups = chats.filter(v => v.jid.endsWith('g.us'))
 const defaultMenu = {
   before: `
-┏━━〔 *KyuraBot [2]* 〕━⬣
+┏━━〔 *Ltzx BOT* 〕━⬣
 ┃⬡ Hai, *%name!*
 ┃
 ┃⬡ *Tersisa* _%limit Limit_
@@ -28,17 +28,14 @@ const defaultMenu = {
 ┃⬡ *Uptime* : _%uptime (%muptime)_
 ┃⬡ *Database* : _%rtotalreg dari %totalreg_
 ┃⬡ *Github* : 
-┃   bit.ly/githubkyura
-┃⬡ *Youtube* : 
-┃   bit.ly/youtubekyura
+┃   github.com/akmall-236
 ┗━━━━━━⬣`.trimStart(),
   header: '┏━━〔 *%category* 〕━⬣',
   body: '┃⬡%cmd %islimit %isPremium',
   footer: '┗━━⬣\n',
   after: `
-*KyuraBot*
-_Recode Oleh : Kyura_
-_SourceCode Ori By Nurutomo_
+*%npmname@%version*
+%npmdesc
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
