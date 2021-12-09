@@ -26,7 +26,9 @@ const defaultMenu = {
 ┃⬡ *Uptime* : _%uptime (%muptime)_
 ┃⬡ *User terdaftar* : _%rtotalreg dari %totalreg_
 ┃⬡ *Github* : 
-┃   github.com/akmall-236
+┃   https://github.com/akmall-236
+┃⬡ *Website* : 
+┃   https://akmalz.rf.gd
 ┗━━━━━━⬣`.trimStart(),
   header: '┏━━〔 *%category* 〕━⬣',
   body: '┃⬡ %cmd %islimit %isPremium',
