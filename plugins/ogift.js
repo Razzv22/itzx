@@ -44,7 +44,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     users[who].a += expnya
 
     m.reply(`Berhasil gift *${expnya} ${a}* kepada ${conn.getName(who)}`)
-    // conn.fakeReply(m.chat, `+${expnya} b`, m.sender, m.text)
+    conn.fakeReply(m.chat, `+${expnya} ${a}`, m.sender, m.text)
 }
 handler.help = ['gift @user <kategori>|<jumlah>']
 handler.tags = ['owner']
