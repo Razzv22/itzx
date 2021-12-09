@@ -1,7 +1,8 @@
 {
   "name": "LtzxBOT",
   "version": "2.1.0",
-  "description": "WhatsApp Bot ringan by nurutomo, recode by Akmalz",  "depecrated": false,
+  "description": "WhatsApp Bot ringan by nurutomo, recode by Akmalz",
+  "depecrated": false,
   "main": "index.js",
   "directories": {
     "lib": "lib",
