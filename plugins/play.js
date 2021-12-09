@@ -3,7 +3,7 @@ let yts = require('yt-search')
 let fetch = require('node-fetch')
 let handler = async (m, { conn, command, text, usedPrefix }) => {
   if (!text) throw `uhm.. cari apa?\n\ncontoh:\n${usedPrefix + command} california`
-  await m.reply('subscribe yaa...\n youtube.com/c/KYURA')
+  // await m.reply('subscribe yaa...\n youtube.com/c/KYURA')
   let chat = global.db.data.chats[m.chat]
   let results = await yts(text)
   let vid = results.all.find(video => video.seconds < 3600)
@@ -35,7 +35,7 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
 }
 handler.help = ['play'].map(v => v + ' <pencarian>')
 handler.tags = ['downloader']
-handler.command = /^(p|play)$/i
+handler.command = /^(play)$/i
 
 handler.exp = 0
 
