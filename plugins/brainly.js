@@ -1,3 +1,4 @@
+/*
 let Braintod = require('brainly-scraper-v2');
 let brain = new Braintod("id")
 let handler = async function (m, { text, usedPrefix, command }) {
@@ -15,3 +16,4 @@ handler.tags = ['edukasi']
 handler.command = /^brainly$/i
 
 module.exports = handler
+*/
