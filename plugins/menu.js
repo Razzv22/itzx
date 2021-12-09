@@ -241,10 +241,9 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
 ┃⬡ *${Object.entries(global.db.data.chats).filter(chat => chat[1].isBanned).length}* Chat Terbanned
 ┃⬡ *${Object.entries(global.db.data.users).filter(user => user[1].banned).length}* Pengguna Terbanned
 ┃
-┃⬡ Group Official:
-┃   ${gc1}
+┃⬡ IG : @akmall.prdnz
 ┗━━━━━━━━⬣`.trim(),
-          "buttonText": "Menu Disini",
+          "buttonText": "Klik Disini!",
           "listType": "SINGLE_SELECT",
           "sections": [
             {
