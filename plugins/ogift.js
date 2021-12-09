@@ -11,7 +11,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
         conn.reply(m.chat, fail, m, { contextInfo: { mentionedJid: [owner[0].replace(/[^0-9]/g, '') + '@s.whatsapp.net'] } })
         throw false
     }
-    if (typeof global.db.data.users[who] == "undefined") {
+    /* if (typeof global.db.data.users[who] == "undefined") {
         global.db.data.users[who] = {
             exp: 0,
             limit: 10,
@@ -34,15 +34,15 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     if (!txt) {
         conn.reply(m.chat, fail, m, { contextInfo: { mentionedJid: [owner[0].replace(/[^0-9]/g, '') + '@s.whatsapp.net'] } })
         throw false
-    }
-    if (isNaN(txt)) throw 'Hanya angka'
+    } */
+    // if (isNaN(txt)) throw 'Hanya angka'
     let expnya = b
     if (expnya < 100) throw 'minimal 100'
     if (expnya > 100000000) throw 'maksimal 100jt'
     let users = global.db.data.users
     users[who].a += expnya
 
-    m.reply(`Berhasil gift *${expnya} b* kepada ${conn.getName(who)}`)
+    m.reply(`Berhasil gift *${expnya} ${a}* kepada ${conn.getName(who)}`)
     // conn.fakeReply(m.chat, `+${expnya} b`, m.sender, m.text)
 }
 handler.help = ['gift @user <kategori>|<jumlah>']
