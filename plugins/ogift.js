@@ -3,6 +3,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 	if (!a) a = ''
 	if (!b) b = ''
 	
+    if (!text) return throw `*Kategori:*\n\nexp | armor | potion | money | kuda | legendary | mythic | common\n\nDLL.`
     let fail = `perintah ini buat ngasih item ke pengguna lain\n\ncontoh:\n${usedPrefix + command} @0 exp|1000\natau balas pesan doi dengan perintah: ${usedPrefix + command} exp|1000`
     let who
     if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted.sender
