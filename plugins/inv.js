@@ -1,5 +1,6 @@
 let levelling = require('../lib/levelling')
 let handler = async (m, { conn, usedPrefix, participants, args }) => {
+  try {
     let users = Object.entries(global.db.data.users).map(([key, value]) => {
        return { ...value, jid: key }
     })
@@ -119,7 +120,8 @@ Warn: *${warn}*
 Banned: *No*
 `.trim()
     conn.send2Button(m.chat, str, footer, 'PROFILE', '.profile', 'SHOP', '#shop', m, { contextInfo: { forwardingScore: 999, isForwarded: true }})
-
+  } catch(e) { 
+    throw e
 }
 handler.help = ['inventory', 'inv']
 handler.tags = ['rpg']
