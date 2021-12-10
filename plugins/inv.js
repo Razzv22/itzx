@@ -1,7 +1,7 @@
 let levelling = require('../lib/levelling')
 let handler = async (m, { conn, usedPrefix, participants, args }) => {
   try {
-    let users = Object.entries(global.db.data.users).map(([key, value]) => {
+    let userg = Object.entries(global.DATABASE.data.users).map(([key, value]) => {
        return { ...value, jid: key }
     })
     let name = m.fromMe ? conn.user : conn.contacts[m.sender]
@@ -39,15 +39,15 @@ let handler = async (m, { conn, usedPrefix, participants, args }) => {
     let sampah = global.db.data.users[who].sampah
     let { max } = levelling.xpRange(level, exp, global.multiplier)
     let name = m.fromMe ? conn.user : conn.contacts[who]
-    let sortedmoney = users.map(toNumber('money')).sort(sort('money'))
-    let sortedlevel = users.map(toNumber('level')).sort(sort('level'))
-    let sorteddiamond = users.map(toNumber('diamond')).sort(sort('diamond'))
-    let sortedpotion = users.map(toNumber('potion')).sort(sort('potion'))
-    let sortedsampah = users.map(toNumber('sampah')).sort(sort('sampah'))
-    let sortedcommon = users.map(toNumber('common')).sort(sort('common'))
-    let sorteduncommon = users.map(toNumber('uncommon')).sort(sort('uncommon'))
-    let sortedmythic = users.map(toNumber('mythic')).sort(sort('mythic'))
-    let sortedlegendary = users.map(toNumber('legendary')).sort(sort('legendary'))
+    let sortedmoney = userg.map(toNumber('money')).sort(sort('money'))
+    let sortedlevel = userg.map(toNumber('level')).sort(sort('level'))
+    let sorteddiamond = userg.map(toNumber('diamond')).sort(sort('diamond'))
+    let sortedpotion = userg.map(toNumber('potion')).sort(sort('potion'))
+    let sortedsampah = userg.map(toNumber('sampah')).sort(sort('sampah'))
+    let sortedcommon = userg.map(toNumber('common')).sort(sort('common'))
+    let sorteduncommon = userg.map(toNumber('uncommon')).sort(sort('uncommon'))
+    let sortedmythic = userg.map(toNumber('mythic')).sort(sort('mythic'))
+    let sortedlegendary = userg.map(toNumber('legendary')).sort(sort('legendary'))
     let usersmoney = sortedmoney.map(v => v[0])
     let usersdiamond = sorteddiamond.map(v => v[0])
     let userspotion = sortedpotion.map(v => v[0])
@@ -60,18 +60,22 @@ let handler = async (m, { conn, usedPrefix, participants, args }) => {
     let str = `
 Inventory *${name.vnmae || name.notify || name.name || ('+' + name.jid.split`@`[0])}*
 
-🏷️Title: *${title ? '' : 'Tidak ada'}*\n
+🏷️Title: *${title ? '' : 'Tidak ada'}*
+
 ❤️Health: *${healt}*
 💳Role: *${role}*
-🥋Armor: *${armor == 0 ? 'Tidak Punya' : '' || armor == 1 ? 'Leather Armor' : '' || armor == 2 ? 'Iron Armor' : '' || armor == 3 ? 'Gold Armor' : '' || armor == 4 ? 'Diamond Armor' : '' || armor == 5 ? 'Netherite Armor' : ''}*\n
+🥋Armor: *${armor == 0 ? 'Tidak Punya' : '' || armor == 1 ? 'Leather Armor' : '' || armor == 2 ? 'Iron Armor' : '' || armor == 3 ? 'Gold Armor' : '' || armor == 4 ? 'Diamond Armor' : '' || armor == 5 ? 'Netherite Armor' : ''}*
+
 ⛏️Pickaxe: *${pickaxe == 0 ? 'Tidak Punya' : '' || pickaxe == 1 ? 'Stone Pickaxe' : '' || pickaxe == 2 ? 'Golden Pickaxe' : '' || pickaxe == 3 ? 'Iron Pickaxe' : '' || armor == 4 ? 'Diamond Pickaxe' : '' || armor == 5 ? 'Netherite Pickaxe' : ''}*
 ⛏️Durability: *${pdurability}*
 🎣Fishing Rod: *${fishingrod == 0 ? 'Tidak Punya' : '' || fishingrod == 1 ? 'Pancingan Bambu' : '' || fishingrod == 2 ? 'Pancingan Biasa' : '' || fishingrod == 3 ? 'Pancingan Besi' : '' || fishingrod == 4 ? 'Pancingan Emas' : '' || fishingrod == 5 ? 'Jaring Ikan' : ''}*
-🎣Durability: *${fdurability}*\n
+🎣Durability: *${fdurability}*
+
 💰Money: *${money}*
 🪙Limit: *${limit}*
 🧬Level: *${level}*
-📈Exp: *${exp}*\n
+📈Exp: *${exp}*
+
 *Inventory*
 💎Diamond: *${diamond}*
 🪨Batu: *${batu}*
@@ -79,18 +83,23 @@ Inventory *${name.vnmae || name.notify || name.name || ('+' + name.jid.split`@`[
 🧃Potion: *${potion}*
 🗑️Sampah: *${sampah}*
 🍖Makanan Pet: *${makananpet}*
-Total inv: *${diamond + potion + sampah + makananpet}* item\n
+Total inv: *${diamond + potion + sampah + makananpet}* item
+
 *Crate*
 📦Common: *${common}*
 📦Uncommon: *${uncommon}*
 📦Mythic: *${mythic}*
 🎁Legendary: *${legendary}*
-🎁Pet: *${pet}*\n
+🎁Pet: *${pet}*
+
 *Pet*
 🐈Kucing: *${kucing == 0 ? 'Tidak Punya' : '' || kucing == 1 ? 'Level 1' : '' || kucing == 2 ? 'Level 2' : '' || kucing == 3 ? 'Level 3' : '' || kucing == 4 ? 'Level 4' : '' || kucing == 5 ? 'Level 5' : '' || kucing == 6 ? 'Level 6' : '' || kucing == 7 ? 'Level 7' : '' || kucing == 8 ? 'Level 8' : '' || kucing == 9 ? 'Level 9' : '' || kucing == 10 ? 'Level 10' : '' || kucing == 11 ? 'Level 11' : '' || kucing == 12 ? 'Level 12' : '' || kucing == 13 ? 'Level 13' : '' || kucing == 14 ? 'Level 14' : '' || kucing == 15 ? 'Level 15' : '' || kucing == 16 ? 'Level 16' : '' || kucing == 17 ? 'Level 17' : '' || kucing == 18 ? 'Level 18' : '' || kucing == 19 ? 'Level 19' : '' || kucing == 20 ? 'Level 20 MAX' : ''}*
 🦊Rubah: *${rubah == 0 ? 'Tidak Punya' : '' || rubah == 1 ? 'Level 1' : '' || rubah == 2 ? 'Level 2' : '' || rubah == 3 ? 'Level 3' : '' || rubah == 4 ? 'Level 4' : '' || rubah == 5 ? 'Level 5' : '' || rubah == 6 ? 'Level 6' : '' || rubah == 7 ? 'Level 7' : '' || rubah == 8 ? 'Level 8' : '' || rubah == 9 ? 'Level 9' : '' || rubah == 10 ? 'Level 10' : '' || rubah == 11 ? 'Level 11' : '' || rubah == 12 ? 'Level 12' : '' || rubah == 13 ? 'Level 13' : '' || rubah == 14 ? 'Level 14' : '' || rubah == 15 ? 'Level 15' : '' || rubah == 16 ? 'Level 16' : '' || rubah == 17 ? 'Level 17' : '' || rubah == 18 ? 'Level 18' : '' || rubah == 19 ? 'Level 19' : '' || rubah == 20 ? 'Level 20 MAX' : ''}*
-🐎Kuda: *${kuda == 0 ? 'Tidak Punya' : '' || kuda == 1 ? 'Level 1' : '' || kuda == 2 ? 'Level 2' : '' || kuda == 3 ? 'Level 3' : '' || kuda == 4 ? 'Level 4' : '' || kuda == 5 ? 'Level 5' : '' || kuda == 6 ? 'Level 6' : '' || kuda == 7 ? 'Level 7' : '' || kuda == 8 ? 'Level 8' : '' || kuda == 9 ? 'Level 9' : '' || kuda == 10 ? 'Level 10' : '' || kuda == 11 ? 'Level 11' : '' || kuda == 12 ? 'Level 12' : '' || kuda == 13 ? 'Level 13' : '' || kuda == 14 ? 'Level 14' : '' || kuda == 15 ? 'Level 15' : '' || kuda == 16 ? 'Level 16' : '' || kuda == 17 ? 'Level 17' : '' || kuda == 18 ? 'Level 18' : '' || kuda == 19 ? 'Level 19' : '' || kuda == 20 ? 'Level 20 MAX' : ''}*\n\n
-*Progres*\n
+🐎Kuda: *${kuda == 0 ? 'Tidak Punya' : '' || kuda == 1 ? 'Level 1' : '' || kuda == 2 ? 'Level 2' : '' || kuda == 3 ? 'Level 3' : '' || kuda == 4 ? 'Level 4' : '' || kuda == 5 ? 'Level 5' : '' || kuda == 6 ? 'Level 6' : '' || kuda == 7 ? 'Level 7' : '' || kuda == 8 ? 'Level 8' : '' || kuda == 9 ? 'Level 9' : '' || kuda == 10 ? 'Level 10' : '' || kuda == 11 ? 'Level 11' : '' || kuda == 12 ? 'Level 12' : '' || kuda == 13 ? 'Level 13' : '' || kuda == 14 ? 'Level 14' : '' || kuda == 15 ? 'Level 15' : '' || kuda == 16 ? 'Level 16' : '' || kuda == 17 ? 'Level 17' : '' || kuda == 18 ? 'Level 18' : '' || kuda == 19 ? 'Level 19' : '' || kuda == 20 ? 'Level 20 MAX' : ''}*
+
+
+*Progres*
+
 ╭────────────────
 │🧬Level *${level}* To Level *${level}*
 │📈Exp *${exp}* -> *${max}*
@@ -103,7 +112,9 @@ Total inv: *${diamond + potion + sampah + makananpet}* item\n
 ╰────────────────
 ╭────────────────
 │Kuda🐎 ${kuda == 0 ? 'Tidak Punya' : '' || kuda > 0 && kuda < 20 ? `Level *${kuda}* To level *${kuda + 1}*\n│Exp *${_kuda}* -> *${kuda *100}*` : '' || kuda == 20 ? '*Max Level*' : ''}
-╰────────────────\n\n
+╰────────────────
+
+
 *achievement*
 ${readMore}
 1.Top level *${userslevel.indexOf(who) + 1}* dari *${userslevel.length}*
@@ -115,7 +126,8 @@ ${readMore}
 7.Top Mythic *${usersmythic.indexOf(who) + 1}* dari *${usersmythic.length}*
 8.Top Legendary *${userslegendary.indexOf(who) + 1}* dari *${userslegendary.length}*
 9.Top Sampah *${userssampah.indexOf(who) + 1}* dari *${userssampah.length}*
-\n${readMore}\n
+\n${readMore}
+
 Warn: *${warn}*
 Banned: *No*
 `.trim()
