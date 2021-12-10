@@ -1,9 +1,5 @@
 let levelling = require('../lib/levelling')
 let handler = async (m, { conn, usedPrefix, participants, args }) => {
-    let userg = Object.entries(global.DATABASE.data.users).map(([key, value]) => {
-       return { ...value, jid: key }
-    })
-    let name = m.fromMe ? conn.user : conn.contacts[m.sender]
     if (!db.data.chats[m.chat].rpg && m.isGroup) throw global.rpg
     let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
     let healt = global.db.data.users[who].healt
@@ -138,22 +134,6 @@ handler.command = /^(inv(entory)?|bal|level(ing)?|money|e?xp)$/i
 module.exports = handler
 
 handler.register = true
-
-function sort(property, ascending = true) {
-  if (property) return (...args) => args[ascending & 1][property] - args[!ascending & 1][property]
-  else return (...args) => args[ascending & 1] - args[!ascending & 1]
-}
-
-function toNumber(property, _default = 0) {
-  if (property) return (a, i, b) => {
-    return { ...b[i], [property]: a[property] === undefined ? _default : a[property] }
-  }
-  else return a => a === undefined ? _default : a
-}
-
-function enumGetKey(a) {
-  return a.jid
-}
 
 const more = String.fromCharCode(8206)
 const readMore = more.repeat(4001)
