@@ -5,7 +5,7 @@ let handler = async (m, { conn, usedPrefix, participants }) => {
     })
     let name = m.fromMe ? conn.user : conn.contacts[m.sender]
     if (!db.data.chats[m.chat].rpg && m.isGroup) throw global.rpg
-    let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
+    let who = m.sender // m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
     let healt = global.db.data.users[who].healt
     let armor = global.db.data.users[who].armor 
     let pickaxe = global.db.data.users[who].pickaxe
