@@ -10,7 +10,7 @@ const Scumi = 5000
 const Bdory = 50000
 const Sdory = 30000
 const Blumba = 100000
-const Slumba = 100000
+const Slumba = 50000
 const Bhiu = 80000
 const Shiu = 40000
 const Budang = 10000
@@ -31,7 +31,7 @@ let handler  = async (m, { conn, command, args, usedPrefix, DevMode }) => {
     let jualbeli = (args[0] || '').toLowerCase()
 const  Schat = `
 ${usedPrefix}fishop <Buy|sell> <item> <jumlah>\n
-Contoh penggunaan: *${usedPrefix}fishop buy orca 1*\n\n
+Contoh penggunaan: *${usedPrefix}fishop buy lumba 1*\n\n
 List Ikan:\n\n
 *Ikan   |  Harga beli*\n
 🐳Paus.       ${Bpaus}
@@ -42,7 +42,7 @@ List Ikan:\n\n
 🐙Gurita.     ${Bgurita}
 🦑Cumi².     ${Bcumi}
 🐠Dory.        ${Bdory}
-🐬Lumba²    ${Blumba}
+🐬Lumba².    ${Blumba}
 🦞Lobster    ${Blobster}
 🐡Buntal.     ${Bbuntal}\n\n
 *Ikan   |  Harga Jual*\n
