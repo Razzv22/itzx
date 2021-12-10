@@ -13,8 +13,8 @@ const Smythic = 15000
 const Biron = 5000
 const Siron = 3000
 const Sbatu = 500
-const Upickaxe = 25000
-const Ufishing = 25000
+const Upickaxe = 30000
+const Ufishing = 30000
 const Blegendary = 7500
 const Slegendary = 3000
 const Bsampah = 4000
@@ -22,20 +22,26 @@ const Ssampah = 2000
 let handler  = async (m, { conn, command, args, usedPrefix, DevMode }) => {
 	if (!db.data.chats[m.chat].rpg && m.isGroup) throw global.rpg
     const _armor = global.db.data.users[m.sender].armor
-    const armor = (_armor == 0 ? 20000 : '' || _armor == 1 ? 49999 : '' || _armor == 2 ? 99999 : '' || _armor == 3 ? 149999 : '' || _armor == 4 ? 299999 : '')
+    const armor = (_armor == 0 ? 25000 : '' || _armor == 1 ? 49999 : '' || _armor == 2 ? 99999 : '' || _armor == 3 ? 149999 : '' || _armor == 4 ? 299999 : '')
     const _pickaxe = global.db.data.users[m.sender].pickaxe
-    const pickaxe = (_pickaxe == 0 ? 20000 : '' || _pickaxe == 1 ? 49999 : '' || _pickaxe == 2 ? 99999 : '' || _pickaxe == 3 ? 149999 : '' || _pickaxe == 4 ? 299999 : '')
+    const pickaxe = (_pickaxe == 0 ? 25000 : '' || _pickaxe == 1 ? 49999 : '' || _pickaxe == 2 ? 99999 : '' || _pickaxe == 3 ? 149999 : '' || _pickaxe == 4 ? 299999 : '')
         const _fishingrod = global.db.data.users[m.sender].fishingrod
-    const fishingrod = (_fishingrod == 0 ? 20000 : '' || _fishingrod == 1 ? 49999 : '' || _fishingrod == 2 ? 99999 : '' || _fishingrod == 3 ? 149999 : '' || _fishingrod == 4 ? 299999 : '')
+    const fishingrod = (_fishingrod == 0 ? 25000 : '' || _fishingrod == 1 ? 49999 : '' || _fishingrod == 2 ? 99999 : '' || _fishingrod == 3 ? 149999 : '' || _fishingrod == 4 ? 299999 : '')
     let type = (args[0] || '').toLowerCase()
     let _type = (args[1] || '').toLowerCase()
     let jualbeli = (args[0] || '').toLowerCase()
     const Kchhat = `
-${usedPrefix}shop <Buy|sell|upgrade> <item> <jumlah>\n
+${usedPrefix}shop <Buy|sell|upgrade> <item> <jumlah>
+
 Contoh penggunaan: *${usedPrefix}shop buy potion 1*
-*${usedPrefix}shop upgrade fishingrod* \n\n
-List Barang:\n\n
-*Barang   |  Harga beli*\n
+*${usedPrefix}shop upgrade fishingrod* 
+
+
+List Barang:
+
+
+*Barang   |  Harga beli*
+
 Limit :.        ${Blimit}
 Potion:       ${potion}
 Diamond:     ${Bdiamond}
@@ -46,13 +52,19 @@ Legendary: ${Blegendary}
 Sampah:     ${Bsampah}
 Armor:       ${armor}
 Pickaxe:    ${pickaxe} +500 durability
-Fishingrod: ${fishingrod} +500 durability\n\n
-*Upgrade   | Harga Update*\n
+Fishingrod: ${fishingrod} +500 durability
+
+
+*Upgrade   | Harga Update*
+
 Upgrade Pickaxe: ${Upickaxe} 
 +500 durability
 Upgrade Fishing Rod: ${Ufishing} 
-+500 durability\n\n
-*Barang   | Harga Jual*\n
++500 durability
+
+
+*Barang   | Harga Jual*
+
 Potion:       ${Spotion}
 Diamond:     ${Sdiamond}
 Common:     ${Scommon}
@@ -232,8 +244,8 @@ Contoh penggunaan: *${usedPrefix + command} buy potion 1*
                         if (global.db.data.users[m.sender].money > Ufishing * 1) {
                             global.db.data.users[m.sender].fishingroddurability += 500
                             global.db.data.users[m.sender].money -= Ufishing * 1
-                            m.reply(m.chat, `Succes menambah durability pickaxe seharga ${Ufishing} money` ,m)
-                        } else m.reply(m.chat, `uang mu tidak cukup untuk menambah durability pickaxe seharga ${Ufishing} money`, m)
+                            m.reply(m.chat, `Succes menambah durability fishingrod seharga ${Ufishing} money` ,m)
+                        } else m.reply(m.chat, `uang mu tidak cukup untuk menambah durability fishingrod seharga ${Ufishing} money`, m)
                         break
                      default:
                         return conn.reply(m.chat, Kchat, m)
