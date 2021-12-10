@@ -1,6 +1,5 @@
 let levelling = require('../lib/levelling')
 let handler = async (m, { conn, usedPrefix, participants, args }) => {
-  try {
     let userg = Object.entries(global.DATABASE.data.users).map(([key, value]) => {
        return { ...value, jid: key }
     })
@@ -39,15 +38,15 @@ let handler = async (m, { conn, usedPrefix, participants, args }) => {
     let sampah = global.db.data.users[who].sampah
     let { max } = levelling.xpRange(level, exp, global.multiplier)
     let name = m.fromMe ? conn.user : conn.contacts[who]
-    let sortedmoney = userg.map(toNumber('money')).sort(sort('money'))
-    let sortedlevel = userg.map(toNumber('level')).sort(sort('level'))
-    let sorteddiamond = userg.map(toNumber('diamond')).sort(sort('diamond'))
-    let sortedpotion = userg.map(toNumber('potion')).sort(sort('potion'))
-    let sortedsampah = userg.map(toNumber('sampah')).sort(sort('sampah'))
-    let sortedcommon = userg.map(toNumber('common')).sort(sort('common'))
-    let sorteduncommon = userg.map(toNumber('uncommon')).sort(sort('uncommon'))
-    let sortedmythic = userg.map(toNumber('mythic')).sort(sort('mythic'))
-    let sortedlegendary = userg.map(toNumber('legendary')).sort(sort('legendary'))
+    let sortedmoney = Object.entries(global.DATABASE.data.users).sort((a, b) => b[1].money - a[1].money)
+    let sortedlevel = Object.entries(global.DATABASE.data.users).sort((a, b) => b[1].level - a[1].level)
+    let sorteddiamond = Object.entries(global.DATABASE.data.users).sort((a, b) => b[1].diamond - a[1].diamond)
+    let sortedpotion = Object.entries(global.DATABASE.data.users).sort((a, b) => b[1].potion - a[1].potion)
+    let sortedsampah = Object.entries(global.DATABASE.data.users).sort((a, b) => b[1].sampah - a[1].sampah)
+    let sortedcommon = Object.entries(global.DATABASE.data.users).sort((a, b) => b[1].common - a[1].common)
+    let sorteduncommon = Object.entries(global.DATABASE.data.users).sort((a, b) => b[1].uncommon - a[1].uncommon)
+    let sortedmythic = Object.entries(global.DATABASE.data.users).sort((a, b) => b[1].mythic - a[1].mythic)
+    let sortedlegendary = Object.entries(global.DATABASE.data.users).sort((a, b) => b[1].legendary - a[1].legendary)
     let usersmoney = sortedmoney.map(v => v[0])
     let usersdiamond = sorteddiamond.map(v => v[0])
     let userspotion = sortedpotion.map(v => v[0])
@@ -132,8 +131,6 @@ Warn: *${warn}*
 Banned: *No*
 `.trim()
     conn.send2Button(m.chat, str, footer, 'PROFILE', '.profile', 'SHOP', '#shop', m, { contextInfo: { forwardingScore: 999, isForwarded: true }})
-  } catch(e) { 
-    throw e
 }
 handler.help = ['inventory', 'inv']
 handler.tags = ['rpg']
