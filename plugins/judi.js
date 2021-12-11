@@ -16,10 +16,10 @@ async function handler(m, { conn, args, isROwner }) {
                 count,
                 timeout: setTimeout(() => (m.reply('timed out'), delete confirm[m.sender]), 60000)
             }
-            let txt = '⚠️Warning⚠️\n*Jangan judi karena tidak akan menang, BENERAN!!*\nApakah anda yakin (pikirkan baik-baik) mau melakukan judi (Y/n) (60s Timeout)'
+            let txt = 'Apakah anda yakin mau melakukan judi? (y/n) (60s Timeout)'
             const buttons = [
-                {buttonId: `id1`, buttonText: {displayText: 'y'}, type: 1},
-                {buttonId: `id2`, buttonText: {displayText: 'n'}, type: 1}
+                {buttonId: `id1`, buttonText: {displayText: 'Ya'}, type: 1},
+                {buttonId: `id2`, buttonText: {displayText: 'Tidak'}, type: 1}
             ]
 
             const buttonMessage = {
