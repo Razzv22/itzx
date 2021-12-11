@@ -1,24 +1,35 @@
 let levelling = require('../lib/levelling')
 let handler = async (m, { conn, usedPrefix, participants, args }) => {
+    let { registered } = global.db.data.users[m.sender]
+    if (!registered) return throw `Registrasi terlebih dahulu untuk menggunakan fitur ini\n\nContoh :\n${usedPrefix}reg Akmalz.16`
+    let userg = Object.entries(global.db.data.users).map(([key, value]) => {
+       return { ...value, jid: key }
+    })
     if (!db.data.chats[m.chat].rpg && m.isGroup) throw global.rpg
     let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
+    let { healt, armor, pickaxe, fishingrod, warn, title, role, pet, limit, kucing, rubah, kuda, diamond, batu, iron, potion, common, uncommon, legendary, mythic, makananpet, level, money, exp, sampah } = global.db.data.users[who]
+/*
     let healt = global.db.data.users[who].healt
     let armor = global.db.data.users[who].armor 
     let pickaxe = global.db.data.users[who].pickaxe
+*/
     let pdurability = global.db.data.users[who].pickaxedurability
-    let fishingrod = global.db.data.users[who].fishingrod
+    // let fishingrod = global.db.data.users[who].fishingrod
     let fdurability = global.db.data.users[who].fishingroddurability
+/*
     let warn = global.db.data.users[who].warn
     let title = global.db.data.users[who].title
     let role = global.db.data.users[who].role
     let pet = global.db.data.users[who].pet
     let limit = global.db.data.users[who].limit
     let kucing = global.db.data.users[who].kucing
+*/
     let _kucing = global.db.data.users[who].anakkucing
-    let rubah = global.db.data.users[who].rubah
+    // let rubah = global.db.data.users[who].rubah
     let _rubah = global.db.data.users[who].anakrubah
-    let kuda = global.db.data.users[who].kuda
+    // let kuda = global.db.data.users[who].kuda
     let _kuda = global.db.data.users[who].anakkuda
+/*
     let diamond = global.db.data.users[who].diamond
     let batu = global.db.data.users[who].batu
     let iron = global.db.data.users[who].iron
@@ -32,26 +43,27 @@ let handler = async (m, { conn, usedPrefix, participants, args }) => {
     let money = global.db.data.users[who].money
     let exp = global.db.data.users[who].exp
     let sampah = global.db.data.users[who].sampah
+*/
     let { max } = levelling.xpRange(level, exp, global.multiplier)
     let name = m.fromMe ? conn.user : conn.contacts[who]
-    let sortedmoney = Object.entries(global.DATABASE.data.users).sort((a, b) => b[1].money - a[1].money)
-    let sortedlevel = Object.entries(global.DATABASE.data.users).sort((a, b) => b[1].level - a[1].level)
-    let sorteddiamond = Object.entries(global.DATABASE.data.users).sort((a, b) => b[1].diamond - a[1].diamond)
-    let sortedpotion = Object.entries(global.DATABASE.data.users).sort((a, b) => b[1].potion - a[1].potion)
-    let sortedsampah = Object.entries(global.DATABASE.data.users).sort((a, b) => b[1].sampah - a[1].sampah)
-    let sortedcommon = Object.entries(global.DATABASE.data.users).sort((a, b) => b[1].common - a[1].common)
-    let sorteduncommon = Object.entries(global.DATABASE.data.users).sort((a, b) => b[1].uncommon - a[1].uncommon)
-    let sortedmythic = Object.entries(global.DATABASE.data.users).sort((a, b) => b[1].mythic - a[1].mythic)
-    let sortedlegendary = Object.entries(global.DATABASE.data.users).sort((a, b) => b[1].legendary - a[1].legendary)
-    let usersmoney = sortedmoney.map(v => v[0])
-    let usersdiamond = sorteddiamond.map(v => v[0])
-    let userspotion = sortedpotion.map(v => v[0])
-    let userssampah = sortedsampah.map(v => v[0])
-    let userslevel = sortedlevel.map(v => v[0])
-    let userscommon = sortedcommon.map(v => v[0])
-    let usersuncommon = sorteduncommon.map(v => v[0])
-    let usersmythic = sortedmythic.map(v => v[0])
-    let userslegendary = sortedlegendary.map(v => v[0])
+    let sortedmoney = userg.map(toNumber('money')).sort(sort('money'))
+    let sortedlevel = userg.map(toNumber('level')).sort(sort('level'))
+    let sorteddiamond = userg.map(toNumber('diamond')).sort(sort('diamond'))
+    let sortedpotion = userg.map(toNumber('potion')).sort(sort('potion'))
+    let sortedsampah = userg.map(toNumber('sampah')).sort(sort('sampah'))
+    let sortedcommon = userg.map(toNumber('common')).sort(sort('common'))
+    let sorteduncommon = userg.map(toNumber('uncommon')).sort(sort('uncommon'))
+    let sortedmythic = userg.map(toNumber('mythic')).sort(sort('mythic'))
+    let sortedlegendary = userg.map(toNumber('legendary')).sort(sort('legendary'))
+    let usersmoney = sortedmoney.map(enumGetKey)
+    let usersdiamond = sorteddiamond.map(enumGetKey)
+    let userspotion = sortedpotion.map(enumGetKey)
+    let userssampah = sortedsampah.map(enumGetKey)
+    let userslevel = sortedlevel.map(enumGetKey)
+    let userscommon = sortedcommon.map(enumGetKey)
+    let usersuncommon = sorteduncommon.map(enumGetKey)
+    let usersmythic = sortedmythic.map(enumGetKey)
+    let userslegendary = sortedlegendary.map(enumGetKey)
     let str = `
 Inventory *${name.vnmae || name.notify || name.name || ('+' + name.jid.split`@`[0])}*
 
