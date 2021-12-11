@@ -6,7 +6,7 @@ let handler = async (m, { conn, args, participants }) => {
   let sortedExp = users.map(toNumber('exp')).sort(sort('exp'))
   let sortedLim = users.map(toNumber('limit')).sort(sort('limit'))
   let sortedLevel = users.map(toNumber('level')).sort(sort('level'))
-  let sortedMoney = users.map(toNumber('money')).sort(sort('level'))
+  let sortedMoney = users.map(toNumber('money')).sort(sort('money'))
   // let sortedmoney = Object.entries(global.DATABASE.data.users).sort((a, b) => b[1].money - a[1].money)
   let usersExp = sortedExp.map(enumGetKey)
   let usersLim = sortedLim.map(enumGetKey)
