@@ -1,8 +1,8 @@
 let handler  = async (m, { conn, usedPrefix: _p }) => {
-ye = `@${m.sender.split`@`[0]}`
-let info = `Hai Kak ${ye} Nih SC VIA GITHUB ${ye} JANGAN LUPA FOLLOW
+let ye = `@${m.sender.split`@`[0]}`
+let info = `Hai Kak ${ye} Nih SC VIA GITHUB JANGAN LUPA FOLLOW
 Atau Bisa Lewat Link Dibawah Ini :
-https://github.com/RTeam1
+https://github.com/Akmall-236/rpgbot
 `.trim()
 
 conn.fakeReply(m.chat, info, '0@s.whatsapp.net', `*${global.packname}*`, 'status@broadcast') 
