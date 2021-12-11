@@ -59,11 +59,11 @@ Inventory *${name.vnmae || name.notify || name.name || ('+' + name.jid.split`@`[
 
 ❤️Health: *${healt}*
 💳Role: *${role}*
-🥋Armor: *${armor == 0 ? 'Tidak Punya' : '' || armor == 1 ? 'Leather Armor' : '' || armor == 2 ? 'Iron Armor' : '' || armor == 3 ? 'Gold Armor' : '' || armor == 4 ? 'Diamond Armor' : '' || armor == 5 ? 'Netherite Armor' : ''}*
+🥋Armor: *${armor == 0 ? 'Tidak Punya' : '' || armor == 1 ? 'Leather Armor' : '' || armor == 2 ? 'Iron Armor' : '' || armor == 3 ? 'Gold Armor' : '' || armor == 4 ? 'Diamond Armor' : '' || armor > 5 ? 'Netherite Armor' : ''}*
 
-⛏️Pickaxe: *${pickaxe == 0 ? 'Tidak Punya' : '' || pickaxe == 1 ? 'Stone Pickaxe' : '' || pickaxe == 2 ? 'Golden Pickaxe' : '' || pickaxe == 3 ? 'Iron Pickaxe' : '' || armor == 4 ? 'Diamond Pickaxe' : '' || armor == 5 ? 'Netherite Pickaxe' : ''}*
+⛏️Pickaxe: *${pickaxe == 0 ? 'Tidak Punya' : '' || pickaxe == 1 ? 'Stone Pickaxe' : '' || pickaxe == 2 ? 'Golden Pickaxe' : '' || pickaxe == 3 ? 'Iron Pickaxe' : '' || armor == 4 ? 'Diamond Pickaxe' : '' || armor > 5 ? 'Netherite Pickaxe' : ''}*
 ⛏️Durability: *${pdurability}*
-🎣Fishing Rod: *${fishingrod == 0 ? 'Tidak Punya' : '' || fishingrod == 1 ? 'Pancingan Bambu' : '' || fishingrod == 2 ? 'Pancingan Biasa' : '' || fishingrod == 3 ? 'Pancingan Besi' : '' || fishingrod == 4 ? 'Pancingan Emas' : '' || fishingrod == 5 ? 'Jaring Ikan' : ''}*
+🎣Fishing Rod: *${fishingrod == 0 ? 'Tidak Punya' : '' || fishingrod == 1 ? 'Pancingan Bambu' : '' || fishingrod == 2 ? 'Pancingan Biasa' : '' || fishingrod == 3 ? 'Pancingan Besi' : '' || fishingrod == 4 ? 'Pancingan Emas' : '' || fishingrod > 5 ? 'Jaring Ikan' : ''}*
 🎣Durability: *${fdurability}*
 
 💰Money: *${money}*
