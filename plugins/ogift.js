@@ -1,4 +1,6 @@
-let handler = async (m, { conn, args, usedPrefix, command }) => {
+let handler = async (m, { conn, text, usedPrefix, command }) => {
+
+    let 
 	
     if (!text) return throw `*Kategori:*\n\nexp | armor | potion | money | kuda | legendary | mythic | common\n\nDLL.\nContoh : ${usedPrefix + command} mythic 100 @tag/reply chat doi`
     let fail = `perintah ini buat ngasih item ke pengguna lain\n\ncontoh:\n${usedPrefix + command} @0 exp|1000\natau balas pesan doi dengan perintah: ${usedPrefix + command} exp|1000`
