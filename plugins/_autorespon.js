@@ -40,7 +40,7 @@ handler.all = async function (m, { isBlocked }) {
 │ ✎ Tertarik Untuk Beli Bot Ini?
 │ ✎ Ketuk Tombol Di Bawah Ya
 │
-│ ✎ ©2021 KyuraBot
+│ ✎ ©2021 Akmalz
 │ ✎ Script original by Nurutomo
 ╰‿‿˗ˏˋ *${namabot}* ´ˎ˗ `.trim(), footer, 'Dana', '#viadana', 'GoPay', '#viagopay', m)
 }
@@ -72,7 +72,7 @@ handler.all = async function (m, { isBlocked }) {
     if (new Date() * 1 - setting.status > 1000) {
         let _uptime = process.uptime() * 1000
         let uptime = clockString(_uptime)
-        await this.setStatus(`Aktif selama ${uptime} | Mode: ${global.opts['self'] ? 'Private' : setting.groupOnly ? 'Hanya Grup' : 'Publik'} | ${namabot} by ${namalu}`).catch(_ => _)
+        await this.setStatus(`Aktif selama ${uptime} | Mode: ${global.opts['self'] ? 'Private' : setting.groupOnly ? 'Hanya Grup' : 'Publik'} | ${footer}`).catch(_ => _)
         setting.status = new Date() * 1
     }
 
