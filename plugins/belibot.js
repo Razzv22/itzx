@@ -12,7 +12,7 @@ let handler = async (m, { conn }) => {
 │ ✎ Tertarik Untuk Beli Bot Ini?
 │ ✎ Ketuk Tombol Di Bawah Ya
 │
-│ ✎ ©2021 KyuraBot
+│ ✎ ©2021 Akmalz
 │ ✎ Script original by Nurutomo
 ╰‿‿˗ˏˋ *${namabot}* ´ˎ˗ `.trim(), footer, 'Dana', '#viadana', 'OVO', '#viaovo', 'Pulsa', '#viapulsa', m)
 }
