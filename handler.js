@@ -181,7 +181,7 @@ module.exports = {
             registered: false,
             name: this.getName(m.sender),
             age: -1,
-            serial: serial,
+            // serial: serial,
             regTime: -1,
             autolevelup: true,
             lastIstigfar: 0,
