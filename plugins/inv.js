@@ -48,6 +48,7 @@ let handler = async (m, { conn, usedPrefix, participants, args }) => {
     let name = m.fromMe ? conn.user : conn.contacts[who]
     let sortedmoney = userg.map(toNumber('money')).sort(sort('money'))
     let sortedlevel = userg.map(toNumber('level')).sort(sort('level'))
+    let sortedlimit = userg.map(toNumber('limit')).sort(sort('limit'))
     let sorteddiamond = userg.map(toNumber('diamond')).sort(sort('diamond'))
     let sortedpotion = userg.map(toNumber('potion')).sort(sort('potion'))
     let sortedsampah = userg.map(toNumber('sampah')).sort(sort('sampah'))
@@ -60,6 +61,7 @@ let handler = async (m, { conn, usedPrefix, participants, args }) => {
     let userspotion = sortedpotion.map(enumGetKey)
     let userssampah = sortedsampah.map(enumGetKey)
     let userslevel = sortedlevel.map(enumGetKey)
+    let userslimit = sortedlimit.map(enumGetKey)
     let userscommon = sortedcommon.map(enumGetKey)
     let usersuncommon = sorteduncommon.map(enumGetKey)
     let usersmythic = sortedmythic.map(enumGetKey)
@@ -125,13 +127,14 @@ Total inv: *${diamond + potion + sampah + makananpet}* item
 ${readMore}
 1.Top Level *${userslevel.indexOf(who) + 1}* dari *${userslevel.length}*
 2.Top Money *${usersmoney.indexOf(who) + 1}* dari *${usersmoney.length}*
-3.Top Diamond *${usersdiamond.indexOf(who) + 1}* dari *${usersdiamond.length}*
-4.Top Potion *${userspotion.indexOf(who) + 1}* dari *${userspotion.length}*
-5.Top Common *${userscommon.indexOf(who) + 1}* dari *${userscommon.length}*
-6.Top Uncommon *${usersuncommon.indexOf(who) + 1}* dari *${usersuncommon.length}*
-7.Top Mythic *${usersmythic.indexOf(who) + 1}* dari *${usersmythic.length}*
-8.Top Legendary *${userslegendary.indexOf(who) + 1}* dari *${userslegendary.length}*
-9.Top Sampah *${userssampah.indexOf(who) + 1}* dari *${userssampah.length}*
+3.Top Limit *${userslimit.indexOf(who) + 1}* dari *${userslimit.length}*
+4.Top Diamond *${usersdiamond.indexOf(who) + 1}* dari *${usersdiamond.length}*
+5.Top Potion *${userspotion.indexOf(who) + 1}* dari *${userspotion.length}*
+6.Top Common *${userscommon.indexOf(who) + 1}* dari *${userscommon.length}*
+7.Top Uncommon *${usersuncommon.indexOf(who) + 1}* dari *${usersuncommon.length}*
+8.Top Mythic *${usersmythic.indexOf(who) + 1}* dari *${usersmythic.length}*
+9.Top Legendary *${userslegendary.indexOf(who) + 1}* dari *${userslegendary.length}*
+10.Top Sampah *${userssampah.indexOf(who) + 1}* dari *${userssampah.length}*
 
 ⚠️Warn: *${warn}*
 `.trim()
