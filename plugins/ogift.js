@@ -1,9 +1,6 @@
-let handler = async (m, { conn, text, usedPrefix, command }) => {
-	let [ a, b ] = text.split`|`
-	if (!a) a = ''
-	if (!b) b = ''
+let handler = async (m, { conn, args, usedPrefix, command }) => {
 	
-    if (!text) return throw `*Kategori:*\n\nexp | armor | potion | money | kuda | legendary | mythic | common\n\nDLL.`
+    if (!text) return throw `*Kategori:*\n\nexp | armor | potion | money | kuda | legendary | mythic | common\n\nDLL.\nContoh : ${usedPrefix + command} mythic 100 @tag/reply chat doi`
     let fail = `perintah ini buat ngasih item ke pengguna lain\n\ncontoh:\n${usedPrefix + command} @0 exp|1000\natau balas pesan doi dengan perintah: ${usedPrefix + command} exp|1000`
     let who
     if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted.sender
@@ -37,16 +34,16 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
         throw false
     }
     // if (isNaN(txt)) throw 'Hanya angka'
-    let expnya = b
+    let expnya = args[2]
     if (expnya < 100) throw 'minimal 100'
     if (expnya > 100000000) throw 'maksimal 100jt'
     let users = global.db.data.users
-    users[who].a += expnya
+    users[who].args[1] += expnya
 
     m.reply(`Berhasil gift *${expnya} ${a}* kepada ${conn.getName(who)}`)
     conn.fakeReply(m.chat, `+${expnya} ${a}`, m.sender, m.text)
 }
-handler.help = ['gift @user <kategori>|<jumlah>']
+handler.help = ['gift <kategori> <jumlah> @tag/reply chat doi']
 handler.tags = ['owner']
 handler.command = /^gift$/
 
