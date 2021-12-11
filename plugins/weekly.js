@@ -8,6 +8,7 @@ let handler = async (m, { conn }) => {
         conn.reply(m.chat, `Anda sudah mengklaim dan mendapatkan 20000 💵money dan 3 🎁Legendary crate`, m)
         user.money += 20000
         user.legendary += 3
+        user.limit += 250
         user.lastweekly= new Date * 1
     } else {
         let buttons = `silahkan tunggu *🕒${timers}* lagi untuk bisa mengclaim lagi`.trim()
