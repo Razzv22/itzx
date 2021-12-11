@@ -16,7 +16,7 @@ gc2 = ''
 gc3 = ''
 global.linkGC = [''] // ganti jadi group lu
 global.owner = ['6281326635396','628885960825'] // Put your number here //owner eval
-global.kontak = ['628885960825'] //Ketika ada yang ngetik #owner
+global.kontak = ['628885960825','4365044631513'] //Ketika ada yang ngetik #owner
 global.mods = ['6281326635396','628885960825'] // Want some help?
 global.prems = ['6281326635396','628885960825'] // Premium user has unlimited limit
 global.APIs = { // API Prefix
@@ -43,14 +43,10 @@ global.APIKeys = { // APIKey Here
   'https://melcanz.com': 'trial',
 }
 
-lolkey = 'RFK-Rey'
-zekskey = 'apivinz'
-xteamkey = '057f32b5931c3bce'
-//xteam     KYURABOT
-namaig = 'instagram.com/justme.akmall'
+namaig = 'instagram.com/akmall.prdnz'
 namagithub = 'github.com/Akmall-236'
-kasihcaption = `Nihh...`
-namakontak1 = 'Akmal'
+kasihcaption = 'Nihh bang...'
+namakontak1 = 'Akmalz'
 namakontak2 = ''
 
 //kasihcaption = `Nih Kak`
