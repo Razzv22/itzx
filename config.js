@@ -29,7 +29,8 @@ global.APIs = { // API Prefix
   zeks: 'https://api.zeks.me',
   pencarikode: 'https://pencarikode.xyz',
   bg: 'http://bochil.ddns.net',
-  LeysCoder: 'https://leyscoders-api.herokuapp.com'
+  LeysCoder: 'https://leyscoders-api.herokuapp.com',
+  amel: 'https://melcanz.com',
 }
 global.APIKeys = { // APIKey Here
   // 'https://website': 'apikey' (apikey kalian)
@@ -38,7 +39,8 @@ global.APIKeys = { // APIKey Here
   'https://zahirr-web.herokuapp.com': 'zahirgans',
   'https://api.zeks.me': 'apivinz',
   'https://pencarikode.xyz': 'pais',
-  'https://leyscoders-api.herokuapp.com': 'dappakntlll'
+  'https://leyscoders-api.herokuapp.com': 'dappakntlll',
+  'https://melcanz.com': 'trial',
 }
 
 lolkey = 'RFK-Rey'
