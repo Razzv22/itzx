@@ -106,7 +106,6 @@ Total inv: *${diamond + potion + sampah + makananpet}* item
 
 
 *Progres*
-
 ╭────────────────
 │🧬Level *${level}* To Level *${level}*
 │📈Exp *${exp}* -> *${max}*
@@ -133,10 +132,8 @@ ${readMore}
 7.Top Mythic *${usersmythic.indexOf(who) + 1}* dari *${usersmythic.length}*
 8.Top Legendary *${userslegendary.indexOf(who) + 1}* dari *${userslegendary.length}*
 9.Top Sampah *${userssampah.indexOf(who) + 1}* dari *${userssampah.length}*
-\n${readMore}
 
-Warn: *${warn}*
-Banned: *No*
+⚠️Warn: *${warn}*
 `.trim()
     conn.send2Button(m.chat, str, footer, 'PROFILE', '.profile', 'SHOP', '#shop', m, { contextInfo: { forwardingScore: 999, isForwarded: true }})
 }
