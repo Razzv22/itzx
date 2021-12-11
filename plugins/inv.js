@@ -1,5 +1,5 @@
 let levelling = require('../lib/levelling')
-let handler = async (m, { conn, usedPrefix, participants, args }) => {
+let handler = async (m, { conn, usedPrefix, participants, args, isOwner }) => {
     if (!db.data.chats[m.chat].rpg && m.isGroup) throw global.rpg
     let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
     let healt = global.db.data.users[who].healt
@@ -55,7 +55,7 @@ let handler = async (m, { conn, usedPrefix, participants, args }) => {
     let str = `
 Inventory *${name.vnmae || name.notify || name.name || ('+' + name.jid.split`@`[0])}*
 
-🏷️Title: *${title ? '' : 'Tidak ada'}*
+🏷️Title: *${title ? '' : 'Tidak ada' : isOwner ? 'GAME MASTER 👑'}*
 
 ❤️Health: *${healt}*
 💳Role: *${role}*
