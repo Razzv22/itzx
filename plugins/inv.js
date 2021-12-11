@@ -112,7 +112,7 @@ Total inv: *${diamond + potion + sampah + makananpet}* item
 
 *achievement*
 ${readMore}
-1.Top level *${userslevel.indexOf(who) + 1}* dari *${userslevel.length}*
+1.Top Level *${userslevel.indexOf(who) + 1}* dari *${userslevel.length}*
 2.Top Money *${usersmoney.indexOf(who) + 1}* dari *${usersmoney.length}*
 3.Top Diamond *${usersdiamond.indexOf(who) + 1}* dari *${usersdiamond.length}*
 4.Top Potion *${userspotion.indexOf(who) + 1}* dari *${userspotion.length}*
