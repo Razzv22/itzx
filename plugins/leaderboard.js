@@ -8,16 +8,12 @@ let handler = async (m, { conn, args, participants }) => {
   let sortedLim = users.map(toNumber('limit')).sort(sort('limit'))
   let sortedLevel = users.map(toNumber('level')).sort(sort('level'))
   let sortedMoney = users.map(toNumber('money')).sort(sort('money'))
-  let sortedDiamond = users.map(toNumber('diamond')).sort(sort('diamond'))
-  let sortedMythic = users.map(toNumber('mythic')).sort(sort('mythic'))
-
+  
   let usersExp = sortedExp.map(enumGetKey)
   let usersLim = sortedLim.map(enumGetKey)
   let usersLevel = sortedLevel.map(enumGetKey)
   let usersMoney = sortedMoney.map(enumGetKey)
-  let usersDiamond = sortedDiamond.map(enumGetKey)
-  let usersMythic = sortedMythic.map(enumGetKey)
-
+  
   console.log(participants)
   let len = args[0] && args[0].length > 0 ? Math.min(100, Math.max(parseInt(args[0]), 5)) : Math.min(5, sortedExp.length)
   let text = `
@@ -43,22 +39,10 @@ ${sortedLevel.slice(0, len).map(({ jid, level }, i) => `*${i + 1}.* ${participan
 Kamu: *${usersMoney.indexOf(m.sender) + 1}* dari *${usersMoney.length}*
 
 ${sortedMoney.slice(0, len).map(({ jid, money }, i) => `*${i + 1}.* ${participants.some(p => jid === p.jid) ? `(${conn.getName(jid)}) @` : '@'}${jid.split`@`[0]} *${money} Money*`).join`\n`}
-
-
-• *Diamond Leaderboard Top ${len}* •
-Kamu: *${usersDiamond.indexOf(m.sender) + 1}* dari *${usersDiamond.length}*
-
-${sortedDiamond.slice(0, len).map(({ jid, diamond }, i) => `*${i + 1}.* ${participants.some(p => jid === p.jid) ? `(${conn.getName(jid)}) @` : '@'}${jid.split`@`[0]} *${diamond} Diamond*`).join`\n`}
-
-
-• *Mythic Crate Leaderboard Top ${len}* •
-Kamu: *${usersMythic.indexOf(m.sender) + 1}* dari *${usersMythic.length}*
-
-${sortedMythic.slice(0, len).map(({ jid, mythic }, i) => `*${i + 1}.* ${participants.some(p => jid === p.jid) ? `(${conn.getName(jid)}) @` : '@'}${jid.split`@`[0]} *${mythic} Mythic Crate*`).join`\n`}
 `.trim()
   conn.reply(m.chat, text, m, {
     contextInfo: {
-      mentionedJid: [...usersExp.slice(0, len), ...usersLim.slice(0, len), ...usersLevel.slice(0, len), ...usersMoney.slice(0, len), ...usersDiamond.slice(0, len)...usersMythic.slice(0, len)].filter(v => !participants.some(p => v === p.jid))
+      mentionedJid: [...usersExp.slice(0, len), ...usersLim.slice(0, len), ...usersLevel.slice(0, len), ...usersMoney.slice(0, len)].filter(v => !participants.some(p => v === p.jid))
     }
   })
 }
