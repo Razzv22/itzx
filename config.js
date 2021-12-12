@@ -63,7 +63,9 @@ global.author = `
        \"ig\": \"@akmall.prdnz\", 
        \"github\": \"akmall-236\",
        \"waNumber\": [\"628885960825\",\"6281326635396\"]
-}` // ganti aja
+}
+
+// Biar kayak heker😎` // ganti aja
 
 //yyy
 bc = 'LTZX BOT'
