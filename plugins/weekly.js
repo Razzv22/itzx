@@ -27,11 +27,12 @@ function pickRandom(list) {
   return list[Math.floor(list.length * Math.random())]
 }
 function clockString(ms) {
-  let h = Math.floor(ms / 3600000)
+  let d = Math.floor(ms / 86400000)
+  let h = Math.floor(ms / 3600000) % 24
   let m = Math.floor(ms / 60000) % 60
   let s = Math.floor(ms / 1000) % 60
   console.log({ms,h,m,s})
-  return [h, m, s].map(v => v.toString().padStart(2, 0) ).join(':')
+  return [d, h, m, s].map(v => v.toString().padStart(2, 0) ).join(' : ')
 }
 
 function button(teks, user) {
