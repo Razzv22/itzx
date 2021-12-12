@@ -18,8 +18,8 @@ async function handler(m, { conn, args, isROwner }) {
             }
             let txt = 'Apakah anda yakin mau melakukan judi? (y/n) (60s Timeout)'
             const buttons = [
-                {buttonId: `id1`, buttonText: {displayText: 'Ya'}, type: 1},
-                {buttonId: `id2`, buttonText: {displayText: 'Tidak'}, type: 1}
+                {buttonId: `id1`, buttonText: {displayText: 'y'}, type: 1},
+                {buttonId: `id2`, buttonText: {displayText: 'n'}, type: 1}
             ]
 
             const buttonMessage = {
