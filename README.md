@@ -35,7 +35,7 @@ Tutorial YouTube
 [![YouTube](https://img.shields.io/badge/YouTube-Video-red)](https://youtu.be/DzNIL45qHaM)
 -->
 
-## FOR TERMUX/UBUNTU/SSH USER
+## FOR UBUNTU/SSH USER
 
 ```bash
 apt update && apt upgrade
