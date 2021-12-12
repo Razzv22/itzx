@@ -118,7 +118,7 @@ Total inv: *${diamond + potion + sampah + makananpet}* item
 │Kucing🐈 ${kucing == 0 ? 'Tidak Punya' : '' || kucing > 0 && kucing < 20 ? `Level *${kucing}* To level *${kucing + 1}*\n│Exp *${_kucing}* -> *${kucing *100}*` : '' || kucing == 20 ? '*Max Level*' : ''}
 ╰────────────────
 ╭────────────────
-│Rubah🦊 ${rubah == 0 ? 'Tidak Punya' : '' || rubah > 0 && rubah < 20 ? `Level *${rubah}* To level *${rubah + 1}*\n│Exp *${_rubah}* -> *${rubah *100}*` : '' || rubah == 3 ? '*Max Level*' : ''}
+│Rubah🦊 ${rubah == 0 ? 'Tidak Punya' : '' || rubah > 0 && rubah < 20 ? `Level *${rubah}* To level *${rubah + 1}*\n│Exp *${_rubah}* -> *${rubah *100}*` : '' || rubah == 20 ? '*Max Level*' : ''}
 ╰────────────────
 ╭────────────────
 │Kuda🐎 ${kuda == 0 ? 'Tidak Punya' : '' || kuda > 0 && kuda < 20 ? `Level *${kuda}* To level *${kuda + 1}*\n│Exp *${_kuda}* -> *${kuda *100}*` : '' || kuda == 20 ? '*Max Level*' : ''}
