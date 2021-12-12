@@ -1,7 +1,7 @@
 let levelling = require('../lib/levelling')
 let handler = async (m, { conn, usedPrefix, participants, args }) => {
     let { registered } = global.db.data.users[m.sender]
-    if (!registered) return throw `Registrasi terlebih dahulu untuk menggunakan fitur ini\n\nContoh :\n${usedPrefix}reg Akmalz.16`
+    if (!registered) return m.reply(`Registrasi terlebih dahulu untuk menggunakan fitur ini\n\nContoh :\n${usedPrefix}reg Akmalz.16`)
     let userg = Object.entries(global.db.data.users).map(([key, value]) => {
        return { ...value, jid: key }
     })
