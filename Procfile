@@ -1,1 +1,1 @@
-worker: npm update && node . --server
+worker: npm i @adiwajshing/baileys && node .
