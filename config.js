@@ -53,15 +53,16 @@ namakontak2 = ''
 
 // Sticker WM
 global.packname = '' // ganti aja
-global.author = `{
-    \"ownerName\": \"Akmal Oktavian\",
-    \"botName\": \"Ltzx-BOT\",
-    \"ig\": \"akmall.prdnz\",
-    \"ownerNumber\": [
-        \"628885960825\",
-        \"4365044631513\",
-        \"6281326635396\",
-     ]
+global.author = `
+\"aboutMe\": {
+       \"name\": \"Akmal Oktavian\", 
+       \"age\": \"15\", 
+       \"status\": \"student\"
+},
+\"sosmed\": { 
+       \"ig\": \"@akmall.prdnz\", 
+       \"github\": \"akmall-236\",
+       \"waNumber\": [\"628885960825\",\"6281326635396\"]
 }` // ganti aja
 
 //yyy
