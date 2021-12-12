@@ -20,10 +20,10 @@ Lightweight WhatsApp Bot
 
 ## Heroku Buildpack
 * FFMPEG
-> https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest
+> https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git
 
 * IMAGEMAGICK
-> https://github.com/DuckyTeam/heroku-buildpack-imagemagick
+> https://github.com/DuckyTeam/heroku-buildpack-imagemagick.git
 
 <!--
 | BUILDPACK | LINK |
