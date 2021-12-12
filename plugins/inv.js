@@ -46,26 +46,28 @@ let handler = async (m, { conn, usedPrefix, participants, args }) => {
 */
     let { max } = levelling.xpRange(level, exp, global.multiplier)
     let name = m.fromMe ? conn.user : conn.contacts[who]
-    let sortedmoney = userg.map(toNumber('money')).sort(sort('money'))
-    let sortedlevel = userg.map(toNumber('level')).sort(sort('level'))
-    let sortedlimit = userg.map(toNumber('limit')).sort(sort('limit'))
-    let sorteddiamond = userg.map(toNumber('diamond')).sort(sort('diamond'))
-    let sortedpotion = userg.map(toNumber('potion')).sort(sort('potion'))
-    let sortedsampah = userg.map(toNumber('sampah')).sort(sort('sampah'))
-    let sortedcommon = userg.map(toNumber('common')).sort(sort('common'))
-    let sorteduncommon = userg.map(toNumber('uncommon')).sort(sort('uncommon'))
-    let sortedmythic = userg.map(toNumber('mythic')).sort(sort('mythic'))
-    let sortedlegendary = userg.map(toNumber('legendary')).sort(sort('legendary'))
-    let usersmoney = sortedmoney.map(enumGetKey)
-    let usersdiamond = sorteddiamond.map(enumGetKey)
-    let userspotion = sortedpotion.map(enumGetKey)
-    let userssampah = sortedsampah.map(enumGetKey)
-    let userslevel = sortedlevel.map(enumGetKey)
-    let userslimit = sortedlimit.map(enumGetKey)
-    let userscommon = sortedcommon.map(enumGetKey)
-    let usersuncommon = sorteduncommon.map(enumGetKey)
-    let usersmythic = sortedmythic.map(enumGetKey)
-    let userslegendary = sortedlegendary.map(enumGetKey)
+/*
+    let sortedmoney = Object.entries(global.DATABASE.data.users).sort((a, b) => b[1].money - a[1].money)
+    let sortedlevel = Object.entries(global.DATABASE.data.users).sort((a, b) => b[1].level - a[1].level)
+    let sortedlimit = Object.entries(global.DATABASE.data.users).sort((a, b) => b[1].limit - a[1].limit)
+    let sorteddiamond = Object.entries(global.DATABASE.data.users).sort((a, b) => b[1].diamond - a[1].diamond)
+    let sortedpotion = Object.entries(global.DATABASE.data.users).sort((a, b) => b[1].potion - a[1].potion)
+    let sortedsampah = Object.entries(global.DATABASE.data.users).sort((a, b) => b[1].sampah - a[1].sampah)
+    let sortedcommon = Object.entries(global.DATABASE.data.users).sort((a, b) => b[1].common - a[1].common)
+    let sorteduncommon = Object.entries(global.DATABASE.data.users).sort((a, b) => b[1].uncommon - a[1].uncommon)
+    let sortedmythic = Object.entries(global.DATABASE.data.users).sort((a, b) => b[1].mythic - a[1].mythic)
+    let sortedlegendary = Object.entries(global.DATABASE.data.users).sort((a, b) => b[1].legendary - a[1].legendary)
+    let usersmoney = sortedmoney.map(v => v[0])
+    let usersdiamond = sorteddiamond.map(v => v[0])
+    let userspotion = sortedpotion.map(v => v[0])
+    let userssampah = sortedsampah.map(v => v[0])
+    let userslevel = sortedlevel.map(v => v[0])
+    let userslimit = sortedlimit.map(v => v[0])
+    let userscommon = sortedcommon.map(v => v[0])
+    let usersuncommon = sorteduncommon.map(v => v[0])
+    let usersmythic = sortedmythic.map(v => v[0])
+    let userslegendary = sortedlegendary.map(v => v[0])
+*/
     let str = `
 Inventory *${name.vnmae || name.notify || name.name || ('+' + name.jid.split`@`[0])}*
 
@@ -122,7 +124,9 @@ Total inv: *${diamond + potion + sampah + makananpet}* item
 │Kuda🐎 ${kuda == 0 ? 'Tidak Punya' : '' || kuda > 0 && kuda < 20 ? `Level *${kuda}* To level *${kuda + 1}*\n│Exp *${_kuda}* -> *${kuda *100}*` : '' || kuda == 20 ? '*Max Level*' : ''}
 ╰────────────────
 
-
+⚠️Warn: *${warn}*
+`.trim()
+/*
 *achievement*
 ${readMore}
 1.Top Level *${userslevel.indexOf(who) + 1}* dari *${userslevel.length}*
@@ -135,9 +139,8 @@ ${readMore}
 8.Top Mythic *${usersmythic.indexOf(who) + 1}* dari *${usersmythic.length}*
 9.Top Legendary *${userslegendary.indexOf(who) + 1}* dari *${userslegendary.length}*
 10.Top Sampah *${userssampah.indexOf(who) + 1}* dari *${userssampah.length}*
+*/
 
-⚠️Warn: *${warn}*
-`.trim()
     conn.send2Button(m.chat, str, footer, 'PROFILE', '.profile', 'SHOP', '#shop', m, { contextInfo: { forwardingScore: 999, isForwarded: true }})
 }
 handler.help = ['inventory', 'inv']
