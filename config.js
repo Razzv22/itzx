@@ -53,10 +53,19 @@ namakontak2 = ''
 
 // Sticker WM
 global.packname = '' // ganti aja
-global.author = '// LTZX BOT\n\nlet = {\n    \"ig\": \"akmall.prdnz\",\n    \"name\": \"Akmal Oktavian\",\n    \"waNumber\": [\"628885960825\",\"4365044631513\"]\n}' // ganti aja
+global.author = `{
+    \"ownerName\": \"Akmal Oktavian\",
+    \"botName\": \"Ltzx-BOT\",
+    \"ig\": \"akmall.prdnz\",
+    \"ownerNumber\": [
+        \"628885960825\",
+        \"4365044631513\",
+        \"6281326635396\",
+     ]
+}` // ganti aja
 
 //yyy
-bc = 'LTZX BOT' //RFK Broadcast
+bc = 'LTZX BOT'
 footer = '\nIG : @akmall.prdnz'
 namabot = 'LtzxBOT'
 namalu = 'Akmalz'
