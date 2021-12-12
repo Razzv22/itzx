@@ -52,12 +52,12 @@ namakontak2 = ''
 //kasihcaption = `Nih Kak`
 
 // Sticker WM
-global.packname = 'LTZX BOT' // ganti aja
-global.author = '' // ganti aja
+global.packname = '' // ganti aja
+global.author = '// LTZX BOT\n\nlet = {\n    \"ig\": \"akmall.prdnz\",\n    \"name\": \"Akmal Oktavian\",\n    \"waNumber\": [\"628885960825\",\"4365044631513\"]\n}' // ganti aja
 
 //yyy
 bc = 'LTZX BOT' //RFK Broadcast
-footer = '\n© Akmalz'
+footer = '\nIG : @akmall.prdnz'
 namabot = 'LtzxBOT'
 namalu = 'Akmalz'
 
