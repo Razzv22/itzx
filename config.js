@@ -40,7 +40,7 @@ global.APIKeys = { // APIKey Here
   'https://api.zeks.me': 'apivinz',
   'https://pencarikode.xyz': 'pais',
   'https://leyscoders-api.herokuapp.com': 'dappakntlll',
-  'https://melcanz.com': 'trial',
+  'https://melcanz.com': '8EUmENAQ',
 }
 
 namaig = 'instagram.com/akmall.prdnz'
