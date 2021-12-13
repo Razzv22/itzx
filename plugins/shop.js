@@ -59,7 +59,7 @@ Fishingrod: ${fishingrod} +500 durability
 
 Upgrade Pickaxe: ${Upickaxe} 
 +500 durability
-Upgrade Fishing Rod: ${Ufishing} 
+Upgrade Fishing Rod: ${Ufishing} (ERROR)
 +500 durability
 
 
@@ -239,7 +239,7 @@ Contoh penggunaan: *${usedPrefix + command} buy potion 1*
                             conn.reply(m.chat, `Succes menambah durability pickaxe seharga ${Upickaxe} money` ,m)
                         } else conn.reply(m.chat, `uang mu tidak cukup untuk menambah durability pickaxe seharga ${Upickaxe} money`, m)
                         break
-                   case 'fishingrod':
+                   case 'fishingrodghmd':
                         if (global.db.data.users[m.sender].fishingroddurability > 5000) return conn.reply(m.chat, 'Fishing rodmu sudah *Sangat Kuat*', m)
                         if (global.db.data.users[m.sender].money > Ufishing * 1) {
                             global.db.data.users[m.sender].fishingroddurability += 500
