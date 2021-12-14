@@ -18,8 +18,8 @@ async function handler(m, { conn, args, isROwner }) {
             }
             let txt = 'Apakah anda yakin mau melakukan judi? (y/n) (60s Timeout)'
             const buttons = [
-                {buttonId: `id1`, buttonText: {displayText: 'y'}, type: 1},
-                {buttonId: `id2`, buttonText: {displayText: 'n'}, type: 1}
+                {buttonId: `id1`, buttonText: {displayText: 'yes'}, type: 1},
+                {buttonId: `id2`, buttonText: {displayText: 'no'}, type: 1}
             ]
 
             const buttonMessage = {
@@ -53,7 +53,7 @@ handler.before = async m => {
             let Kamu = (Math.floor(Math.random() * 86)) * 1
             let status = 'Kalah'
             if (Bot < Kamu) {
-                user.money += count * 1
+                user.money += count * 2
                 status = 'Menang'
             } else if (Bot > Kamu) {
                 user.money -= count * 1
