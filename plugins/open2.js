@@ -67,7 +67,7 @@ Anda telah membuka *Uncommon crate* dan mendapatkan:${um > 0 ? `\nMoney: ${um}` 
                     } else conn.reply(m.chat, 'Uncommon crate anda tidak cukup', m)
                 break
         case 'mythic':
-                    let _mm = `${Math.floor(Math.random() * 200)}`.trim()
+                    let _mm = `${Math.floor(Math.random() * 200 * count)}`.trim()
                     let _mmm = `${pickRandom(['0', '0', '1', '0'])}`.trim()
                     let _me = `${Math.floor(Math.random() * 250 * count)}`.trim()
                     let _mp = `${Math.floor(Math.random() * 3 * count)}`.trim()
