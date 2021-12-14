@@ -199,9 +199,9 @@ Anda telah membuka *Legendary crate* dan mendapatkan:${lm > 0 ? `\nMoney: ${lm}`
     }
   }
 }
-handler.help = ['open2 <crate>', 'buka2 <crate>']
+handler.help = ['open <crate>', 'buka <crate>']
 handler.tags = ['rpg']
-handler.command = /^(open2|buka2|gacha2)$/i
+handler.command = /^(open|buka|gacha)$/i
 
 handler.fail = null
 
