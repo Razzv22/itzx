@@ -34,7 +34,7 @@ Tutorial YouTube
 [![YouTube](https://img.shields.io/badge/YouTube-Video-red)](https://youtu.be/DzNIL45qHaM)
 -->
 
-## FOR UBUNTU/SSH USER
+## FOR TERMUX/UBUNTU/SSH USER
 
 ```bash
 apt update && apt upgrade
@@ -47,6 +47,20 @@ cd rpgbot
 npm i
 npm update
 npm start | node .
+```
+
+## INSTALL UBUNTU IN TERMUX
+```sh
+apt-get update && apt-get upgrade -y
+apt-get install wget -y
+apt-get install proot -y
+apt-get install git -y
+cd
+git clone https://github.com/MFDGaming/ubuntu-in-termux.git
+cd ubuntu-in-termux
+chmod +x ubuntu.sh
+./ubuntu.sh -y
+./startubuntu.sh
 ```
 ---------
 
@@ -63,6 +77,8 @@ cd rpgbot
 npm i
 npm update
 ```
+
+
 
 ---------
 
