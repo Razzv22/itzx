@@ -5,7 +5,7 @@ let handler = async (m, { conn, command, args, text, usedPrefix, DevMode }) => {
     let user = global.db.data.users[m.sender]
     let bruh = `${usedPrefix}open <crate name> <jumlah>\n\nContoh penggunaan: *${usedPrefix}open common 10*\n\nlist crate:\n*common*\n*uncommon*\n*mythic*\n*legendary*`
     let _lmao = args[0]
-    let Lmao = `Hanya support 1, 10, 100, 1000\nContoh penggunaan: *${usedPrefix}open ${args > 2 ? _lmao : pickRandom(['common', 'uncommon', 'mythic', 'legendary'])} 10*`
+    let Lmao = `Contoh penggunaan: *${usedPrefix}open ${args > 2 ? _lmao : pickRandom(['common', 'uncommon', 'mythic', 'legendary'])} 10*`
     let type = (args[0] || '').toLowerCase()
     // let count = (args[1] && number(parseInt(args[1])) ? Math.max(parseInt(args[0]), 1) : /all/i.test(args[1]) ? Math.floor(parseInt(user.args[0])) : 1) * 1
     const count = args[1] && args[1].length > 0 ? Math.min(99999999, Math.max(parseInt(args[1]), 1)) : !args[1] || args.length < 4 ? 1 :Math.min(1, count)
