@@ -1,9 +1,9 @@
 let handler = async (m, { conn, text }) => {
   if (!text) throw 'Tidak ada teks'
-  let users = text.split(',').map(v => v.replace(/[^0-9]/g, ''))
+  let men = text.split(',').map(v => v.replace(/[^0-9]/g, ''))
   m.reply(text, false, {
     contextInfo: {
-      mentionedJid: conn.parseMention(text)
+      mentionedJid: conn.parseMention(men)
     }
   })
 }
