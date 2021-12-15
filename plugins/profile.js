@@ -2,6 +2,7 @@ let PhoneNumber = require('awesome-phonenumber')
 let levelling = require('../lib/levelling')
 let handler = async (m, { conn, usedPrefix }) => {
   let pp = './src/avatar_contact.png'
+  let bekgron = './src/bgCanva.png'
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
   try {
     pp = await conn.getProfilePicture(who)
@@ -32,7 +33,10 @@ let handler = async (m, { conn, usedPrefix }) => {
     let { min, xp, max } = levelling.xpRange(level, global.multiplier)
     let username = conn.getName(who)
     let math = max - xp
-    let res = `http://hardianto-chan.herokuapp.com/api/rankcard?profile=https://i.ibb.co/vQTHzkh/IMG-20210907-WA0721.jpg&name=${name}&bg=https://i.ibb.co/4YBNyvP/images-76.jpg&needxp=${max}&curxp=${exp}&level=${level}&logorank=https://i.ibb.co/Wn9cvnv/FABLED.png`
+    let discriminator = who.substring(9, 13)
+    let sortedLevel = users.map(toNumber('level')).sort(sort('level'))
+    let usersLevel = sortedLevel.map(enumGetKey)
+    // let res = `http://hardianto-chan.herokuapp.com/api/rankcard?profile=https://i.ibb.co/vQTHzkh/IMG-20210907-WA0721.jpg&name=${name}&bg=https://i.ibb.co/4YBNyvP/images-76.jpg&needxp=${max}&curxp=${exp}&level=${level}&logorank=https://i.ibb.co/Wn9cvnv/FABLED.png`
     let str = `
 Nama: ${registered ? '(' + name + ') ' : ''}(@${who.replace(/@.+/, '')})${about != 401 ? '\nInfo: ' + about : ''}
 Nomor: ${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}
@@ -45,8 +49,24 @@ Owner: ${global.owner.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').inc
 Premium: ${global.prems.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender) ? 'Ya' : 'Tidak'}
 Terdaftar: ${registered ? 'Ya (' + new Date(regTime).toLocaleString() + ')' : 'Tidak'}${lastclaim > 0 ? '\nTerakhir Klaim: ' + new Date(lastclaim).toLocaleString() : ''}
 `.trim()
+
+let rank = await new canvacord.Rank()
+    .setRank(usersLevel.indexOf(who) + 1)
+    .setAvatar(pp)
+    .setLevel(user.level)
+    .setCurrentXP(user.exp - min)
+    .setRequiredXP(xp)
+    .setProgressBar("#f2aa4c", "COLOR")
+    .setBackground("IMAGE", bekgron)
+    .setUsername(username)
+    .setDiscriminator(discriminator);
+   rank.build()
+    .then(async data => {
+        await this.send2ButtonImg(m.chat, data, str.trim(), footer, 'Daily', ',daily', 'Weekly', '.weekly', m)
+    })
+
     let mentionedJid = [who]
-    conn.sendFile(m.chat, pp, 'pp.jpg', banned ? 'jiakh ke banned' : str, m, false, { contextInfo: { mentionedJid } })
+    // conn.sendFile(m.chat, pp, 'pp.jpg', banned ? 'jiakh ke banned' : str, m, false, { contextInfo: { mentionedJid } })
   }
 }
 handler.help = ['profile [@user]']
