@@ -1,24 +1,24 @@
 let { MessageType } = require('@adiwajshing/baileys')
 const potion = 500
 const Spotion = 150 
-const Bdiamond = 9000
-const Sdiamond = 7500
+const Bdiamond = 2500
+const Sdiamond = 1000
 const Blimit = 20000
 const Bcommon = 7000
 const Scommon = 4000
 const Buncommon = 6000
 const Suncommon = 3000
 const Bmythic = 20000
-const Smythic = 15000
-const Biron = 5000
-const Siron = 3000
-const Sbatu = 500
+const Smythic = 10000
+const Biron = 500
+const Siron = 300
+const Sbatu = 50
 const Upickaxe = 30000
 const Ufishing = 30000
-const Blegendary = 7500
-const Slegendary = 3000
-const Bsampah = 4000
-const Ssampah = 2000
+const Blegendary = 50000
+const Slegendary = 20000
+const Bsampah = 50
+const Ssampah = 50
 let handler  = async (m, { conn, command, args, usedPrefix, DevMode }) => {
 	if (!db.data.chats[m.chat].rpg && m.isGroup) throw global.rpg
     const _armor = global.db.data.users[m.sender].armor
