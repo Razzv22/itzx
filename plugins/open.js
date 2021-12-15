@@ -37,8 +37,8 @@ Anda telah membuka *Common crate* dan mendapatkan:${cm > 0 ? `\nMoney: ${cm}` : 
             break
         case 'uncommon':
                     let _ud = `${Math.floor(Math.random() * 2 * count)}`.trim()
-                    let _ue = `${Math.floor(Math.random() * 100 * count)}`.trim()
-                    let _um = `${Math.floor(Math.random() * 150 * count)}`.trim()
+                    let _ue = `${Math.floor(Math.random() * 60 * count)}`.trim()
+                    let _um = `${Math.floor(Math.random() * 100 * count)}`.trim()
                     let _up = `${Math.floor(Math.random() * 2 * count)}`.trim()
                     let _umc = `${Math.floor(Math.random() * 1 * count)}`.trim()
                     let _uu = `${Math.floor(Math.random() * 2 * count)}`.trim()
