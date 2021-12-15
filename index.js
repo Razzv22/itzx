@@ -2,6 +2,7 @@ console.log('Starting...')
 let { spawn } = require('child_process')
 let path = require('path')
 let fs = require('fs')
+let os = require('os')
 let package = require('./package.json')
 const CFonts  = require('cfonts')
 CFonts.say('Rpg\nWhatsApp Bot', {
@@ -9,11 +10,14 @@ CFonts.say('Rpg\nWhatsApp Bot', {
   align: 'center',
   gradient: ['red', 'magenta']
 })
-CFonts.say(`'${package.name}' By @${package.author.name || package.author}\nMikeBot ver 1.5.0\nRecode By Dawnfrost`, {
+CFonts.say(`'${package.name}' By @${package.author.name || package.author}\nRPG-BOT ver 1.5.0\nRecode By Dawnfrost & Akmalz`, {
   font: 'console',
   align: 'center',
   gradient: ['red', 'magenta']
 })
+
+sayH = `Owner Name : ${namakontak1}\nOwner List : ${owner}\nHostname : ${os.hostname()}\nPlatform : ${os.hostname()}\nCPU :\n   Model : ${JSON.stringify(os.cpus()[0].model)}\n   Speed : ${JSON.stringify(os.cpus()[0].speed)}`
+console.log(sayH)
 
 var isRunning = false
 /**
