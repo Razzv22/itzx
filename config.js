@@ -11,13 +11,13 @@
 // thank you to ALL Bot creator
 // and thanks you to who support my Bot
 
-gc1 = ''
-gc2 = ''
-gc3 = ''
-global.linkGC = [''] // ganti jadi group lu
-global.owner = ['6281326635396','628885960825'] // Put your number here //owner eval
-global.kontak = ['628885960825','4365044631513'] //Ketika ada yang ngetik #owner
-global.mods = ['6281326635396','628885960825'] // Want some help?
+gc1 = 'https://chat.whatsapp.com/LUeaIB2X4aJLshtsIRjwuG'
+gc2 = 'https://chat.whatsapp.com/HJ9pD2XJ8vq7whuAYOvT1Y'
+gc3 = 'https://chat.whatsapp.com/LUeaIB2X4aJLshtsIRjwuG'
+global.linkGC = ['https://chat.whatsapp.com/HJ9pD2XJ8vq7whuAYOvT1Y'] // 
+global.owner = ['6282143610893','6282143610893'] // Put your number here //owner eval
+global.kontak = ['6282143610893','6282143610893'] //Ketika ada yang ngetik #owner
+global.mods = ['6282143610893','6282143610893'] // Want some help?
 global.prems = ['6281326635396','628885960825'] // Premium user has unlimited limit
 global.APIs = { // API Prefix
   // name: 'https://website'
@@ -52,26 +52,26 @@ namakontak2 = ''
 //kasihcaption = `Nih Kak`
 
 // Sticker WM
-global.packname = '' // ganti aja
+global.packname = 'RazzBot' // 
 global.author = `
 \"aboutMe\": {
-       \"name\": \"Akmal Oktavian\", 
+       \"name\": \"Lord Razz\", 
        \"age\": \"15\", 
        \"status\": \"student\"
 },
 \"sosmed\": { 
-       \"ig\": \"@akmall.prdnz\", 
-       \"github\": \"akmall-236\",
-       \"waNumber\": [\"628885960825\",\"6281326635396\"]
+       \"ig\": \"@gaadaorang_01\", 
+       \"github\": \"Razzv22\",
+       \"waNumber\": [\"6282143610893\",\"6282143610893\"]
 }
 
-// Biar kayak heker😎` // ganti aja
+// Kmtl bapack mu pecah` // ganti aja
 
 //yyy
-bc = 'LTZX BOT'
-footer = '\nIG : @akmall.prdnz'
-namabot = 'LtzxBOT'
-namalu = 'Akmalz'
+bc = 'Lord Razz'
+footer = '\nIG : @gaadaorang_01'
+namabot = 'Lord Razz'
+namalu = 'Razz'
 
 
 // 
