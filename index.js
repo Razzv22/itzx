@@ -16,7 +16,7 @@ CFonts.say(`'${package.name}' By @${package.author.name || package.author}\nRPG-
   gradient: ['red', 'magenta']
 })
 
-sayH = `Owner Name : ${namakontak1}\nOwner List : ${owner}\nHostname : ${os.hostname()}\nPlatform : ${os.hostname()}\nCPU :\n   Model : ${JSON.stringify(os.cpus()[0].model)}\n   Speed : ${JSON.stringify(os.cpus()[0].speed)}`
+sayH = `Owner Name : ${namakontak1}\nOwner List : ${owner}\nHostname : ${os.hostname()}\nPlatform : ${os.hostname()}\nCPU :\n   Model : ${os.cpus()[0].model}\n   Speed : ${os.cpus()[0].speed}`
 console.log(sayH)
 
 var isRunning = false
