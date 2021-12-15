@@ -1,3 +1,4 @@
+/*
 let { MessageType } = require('@adiwajshing/baileys')
 
 let handler = async (m, { conn }) => {
@@ -58,3 +59,4 @@ function button(teks, user) {
     
     return buttonMessage
 }
+*/
