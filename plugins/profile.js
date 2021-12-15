@@ -1,3 +1,4 @@
+let canvacord = require('canvacord')
 let PhoneNumber = require('awesome-phonenumber')
 let levelling = require('../lib/levelling')
 let handler = async (m, { conn, usedPrefix }) => {
