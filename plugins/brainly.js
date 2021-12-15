@@ -1,6 +1,5 @@
-/*
-let Braintod = require('brainly-scraper-v2');
-let brain = new Braintod("id")
+let { Brainly } = require('brainly-scraper-v2');
+let brain = new Brainly("id")
 let handler = async function (m, { text, usedPrefix, command }) {
   if (!text) throw `uhm.. soalnya mana?\n\ncontoh:\n${usedPrefix + command} apa itu javascript?`
   brain.search("id", text).then(async res => {
@@ -16,4 +15,3 @@ handler.tags = ['edukasi']
 handler.command = /^brainly$/i
 
 module.exports = handler
-*/
