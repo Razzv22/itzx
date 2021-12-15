@@ -29,6 +29,9 @@ let handler = async (m, { conn, usedPrefix }) => {
         pc: 0,
       }
     }
+    let users = Object.entries(global.db.data.users).map(([key, value]) => {
+        return { ...value, jid: key }
+    })
     let { name, limit, exp, lastclaim, registered, regTime, age, level, role, banned } = global.db.data.users[who]
     let { min, xp, max } = levelling.xpRange(level, global.multiplier)
     let username = conn.getName(who)
