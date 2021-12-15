@@ -18,7 +18,7 @@ let handler = async (m, { conn, command, args, text, usedPrefix, DevMode }) => {
                     let _ce = `${Math.floor(Math.random() * 100 * count)}`.trim()
                     let _cu = `${Math.floor(Math.random() * 1 * count)}`.trim()
                     let cm = (_cm * 1)
-                    let cc = (_cc * 1)
+                    let cc = (_cc * 1 / 2)
                     let cp = (_cp * 1)
                     let ce = (_ce * 1)
                     let cu = (_cu * 1)
@@ -48,8 +48,8 @@ Anda telah membuka *Common crate* dan mendapatkan:${cm > 0 ? `\nMoney: ${cm}` : 
                     let um = (_um * 1)
                     let up = (_up * 1)
                     let umc = (_umc * 1)
-                    let uu = (_uu * 1)
-                    let uc = (_uc * 1)
+                    let uu = (_uu * 1 / 2)
+                    let uc = (_uc * 1 / 2)
                     let Hun = `
 Anda telah membuka *Uncommon crate* dan mendapatkan:${um > 0 ? `\nMoney: ${um}` : ''}${ue > 0 ? `\nExp: ${ue} *exp*` : ''}${ud > 0 ? `\nDiamond: ${ud} *diamond*` : ''}${up > 0 ? `\nPotion: ${up} *potion*` : ''}${uc > 0 ? `\nCommon crate: ${uc} *crate*` : ''}${uu > 0 ? `\nUncommon crate: ${uu} *crate*` : ''}
 `.trim()
@@ -70,12 +70,12 @@ Anda telah membuka *Uncommon crate* dan mendapatkan:${um > 0 ? `\nMoney: ${um}` 
                 break
         case 'mythic':
                     let _mm = `${Math.floor(Math.random() * 200 * count)}`.trim()
-                    let _mmm = `${pickRandom(['0', '0', '1', '0'])}`.trim()
+                    let _mmm = `${pickRandom(['0','0','1','0'])}`.trim()
                     let _me = `${Math.floor(Math.random() * 250 * count)}`.trim()
                     let _mp = `${Math.floor(Math.random() * 3 * count)}`.trim()
                     let _mu = `${Math.floor(Math.random() * 3 * count)}`.trim()
                     let _mc = `${Math.floor(Math.random() * 5 * count)}`.trim()
-                    let _ml = `${pickRandom(['0', '0', '1', '0',  '0'])}`.trim()
+                    let _ml = `${pickRandom(['0','0','1','0','0'])}`.trim()
                     let _md = `${Math.floor(Math.random() * 3 * count)}`.trim()
                     let mm = (_mm * 1)
                     let mmm = (_mmm * 1)
@@ -83,7 +83,7 @@ Anda telah membuka *Uncommon crate* dan mendapatkan:${um > 0 ? `\nMoney: ${um}` 
                     let mp = (_mp * 1)
                     let mu = (_mu * 1)
                     let mc = (_mc * 1)
-                    let ml = (_ml * count)
+                    let ml = (_ml * 1)
                     let md = (_md * 1)
                     let Mychat = `
 Anda telah membuka *Mythic crate* dan mendapatkan:${mm > 0 ? `\nMoney: ${mm}` : ''}${me > 0 ? `\nExp: ${me} *exp*` : ''}${md > 0 ? `\nDiamond: ${md} *diamond*` : ''}${mp > 0 ? `\nPotion: ${mp} *potion*` : ''}${mc > 0 ? `\nCommon crate: ${mc} *crate*` : ''}${mu > 0 ? `\nUncommon crate: ${mu} *crate*` : ''}
@@ -122,10 +122,10 @@ Anda telah membuka *Mythic crate* dan mendapatkan:${mm > 0 ? `\nMoney: ${mm}` : 
                     let lp = (_lp * 1) 
                     let lu = (_lu * 1) 
                     let lc = (_lc * 1) 
-                    let ll = (_ll * count) 
-                    let lpp = (_lpp * count)       
+                    let ll = (_ll * 1) 
+                    let lpp = (_lpp * 1)       
                     let ld = (_ld * 1) 
-                    let lmm = (_lmm * count)
+                    let lmm = (_lmm * 1)
                     let Lechat = `
 Anda telah membuka *Legendary crate* dan mendapatkan:${lm > 0 ? `\nMoney: ${lm}` : ''}${le > 0 ? `\nExp: ${le} *exp*` : ''}${ld > 0 ? `\nDiamond: ${ld} *diamond*` : ''}${lp > 0 ? `\nPotion: ${lp} *potion*` : ''}${lc > 0 ? `\nCommon crate: ${lc} *crate*` : ''}${lu > 0 ? `\nUncommon crate: ${lu} *crate*` : ''}
 `.trim()  
