@@ -66,7 +66,7 @@ let rank = await new canvacord.Rank()
     .setUsername(username)
     .setDiscriminator(discriminator);
    rank.build()
-    .then(async data => {
+    .then(async (data) => {
         await this.send2ButtonImg(m.chat, data, str.trim(), footer, 'Daily', ',daily', 'Weekly', '.weekly', m)
     })
 
