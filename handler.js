@@ -505,8 +505,8 @@ module.exports = {
           let groupMetadata = await this.groupMetadata(jid)
           for (let mlmm of participants) {
             // let pp = './src/avatar_contact.png'
-            let pp = 'https://i.ibb.co/jr9Nh6Q/Thumb.jpg'
-            let ppgc = 'https://i.ibb.co/jr9Nh6Q/Thumb.jpg'
+            let pp = 'https://i.ibb.co/gSH6FT8/20211024-230549.jpg'
+            let ppgc = 'https://i.ibb.co/gSH6FT8/20211024-230549.jpg'
             try {
               pp = await uploadImage(await (await fetch(await this.getProfilePicture(mlmm))).buffer())
               ppgc = await uploadImage(await (await fetch(await this.getProfilePicture(jid))).buffer())
@@ -532,11 +532,27 @@ module.exports = {
                 .setBackground("https://i.ibb.co/KhtRxwZ/dark.png")
                 .toAttachment()
 
-              this.sendFile(jid, action === 'add' ? wel.toBuffer() : lea.toBuffer(), 'pp.jpg', text, null, false, {
+              wel.build().then(async (data) => {
+                this.sendfile(jid, data, 'pp.jpg', , text, null, false, {
+                    contextInfo: {
+                      mentionedJid: [mlmm]
+                    }
+                 })
+              })
+
+              lea.build().then(async (data) => {
+                this.sendfile(jid, data, 'pp.jpg', , text, null, false, {
+                    contextInfo: {
+                      mentionedJid: [mlmm]
+                    }
+                 })
+              })
+
+              /* this.sendFile(jid, action === 'add' ? wel.build().then(async (data) => {  }) : lea.build(), 'pp.jpg', text, null, false, {
                 contextInfo: {
                   mentionedJid: [mlmm]
                 }
-              })
+              }) */
             }
           }
         }
